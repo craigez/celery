@@ -179,7 +179,7 @@ class test_Heart(AppCase):
         c.event_dispatcher = Mock()
 
         with patch('celery.worker.heartbeat.Heart') as hcls:
-            h = Heart(c, 20)
+            h = Heart(c, False, 20)
             self.assertTrue(h.enabled)
             self.assertEqual(h.heartbeat_interval, 20)
             self.assertIsNone(c.heart)
