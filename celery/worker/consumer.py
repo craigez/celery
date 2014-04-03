@@ -542,7 +542,7 @@ class Heart(bootsteps.StartStopStep):
 
     def start(self, c):
         c.heart = heartbeat.Heart(c.timer, c.event_dispatcher,
-            self.heartbeat_interval)
+                                  self.heartbeat_interval)
         c.heart.start()
 
     def stop(self, c):
